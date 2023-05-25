@@ -1131,7 +1131,7 @@ optimize.portfolio <- optimize.portfolio_v2 <- function(
           weights <- qp_result$weights
           # obj_vals <- constrained_objective(w=weights, R=R, portfolio, trace=TRUE, normalize=FALSE)$objective_measures
           obj_vals <- qp_result$obj_vals
-          out <- list(weights=weights, objective_measures=obj_vals, opt_values=obj_vals, out=qp_result$out, call=call)
+          out <- list(qp_result=qp_result, weights=weights, objective_measures=obj_vals, opt_values=obj_vals, out=qp_result$out, call=call)
         }
       } else {
         # if(hasArg(ef)) ef=match.call(expand.dots=TRUE)$ef else ef=FALSE
